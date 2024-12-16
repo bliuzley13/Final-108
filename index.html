@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Enrollment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <h1>UC Merced Enrollment</h1>
+    <div id="login-form">
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button id="login-button">Login</button>
+    </div>
+    <nav>
+      <a href="/admin" style="display: none;" id="admin-link">Admin Panel</a>
+    </nav>
+    <div id="courses">
+      <h2>Available Courses</h2>
+      <ul id="course-list"></ul>
+    </div>
+    <div id="user-courses">
+      <h2>Your Courses</h2>
+      <ul id="user-course-list"></ul>
+    </div>
+
+    <p id="message"></p>
+    <button id="logout-button" style="display: none;">Logout</button>
+    <button id="decrease-size">Decrease Size</button>
+    <script src="script.js">
+      const role = sessionStorage.getItem("role");
+      if (role === "admin") {
+        document.getElementById("admin-link").style.display = "block";
+      }
+    </script>
+  </div>
+</body>
+</html>
